@@ -1,0 +1,35 @@
+name: EmpViaShapes
+channels:
+  - conda-forge
+  - plotly
+dependencies:
+  - python=3.11
+  - jupyterlab
+  - matplotlib
+  - numpy
+  - pandas
+  - optuna
+  - plotly
+  - scipy
+  - tqdm
+  - pip
+  - ipywidgets
+  - scikit-learn
+  - seaborn
+  - h5py
+  - interpret
+  - py-xgboost
+  - networkx
+  - pip:
+      - nbdev
+      - black
+      - wrds
+      - kaleido
+      - openml
+      - ucimlrepo
+      - imodels
+      - line-profiler
+      - pydot
+      - dot2tex
+      - gosdt
+      - git+https://github.com/KohlerHECTOR/DPDTreeEstimator
