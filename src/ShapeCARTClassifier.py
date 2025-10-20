@@ -26,7 +26,6 @@ class ShapeCARTClassifier:
                  inner_min_impurity_decrease: float = 0.0,
                  inner_min_samples_leaf: int = 1,
                  inner_max_leaf_nodes: int = 32,
-                 smart_init: bool = True,
                  max_iter: int = 20,
                  inner_splitter: str = 'best',
                  # tao params
@@ -37,8 +36,6 @@ class ShapeCARTClassifier:
                  # pairwise control
                  pairwise_candidates: int | float = 0,
                  pairwise_penalty: float = 0.0,
-                 random_pairs: bool = False,
-                 use_dpdt: bool = False,
                  H: int = 5,
                  # multiway Params
                  k: int = 2,
@@ -59,17 +56,17 @@ class ShapeCARTClassifier:
         self.inner_max_leaf_nodes = inner_max_leaf_nodes
         self.pairwise_candidates = pairwise_candidates
         self.pairwise_penalty = pairwise_penalty
-        self.use_dpdt = use_dpdt
+        self.use_dpdt = False
         self.k = k
         self.random_state = random_state
         self.verbose = verbose
         self.max_iter = max_iter
-        self.smart_init = smart_init
+        self.smart_init = True
         self.tao_reg = tao_reg
         self.use_tao = use_tao
         self.n_runs = n_runs
         self.H = H
-        self.random_pairs = random_pairs
+        self.random_pairs = False
         self.internal_splitter = inner_splitter
         self.tao_pair_scale = tao_pair_scale
         

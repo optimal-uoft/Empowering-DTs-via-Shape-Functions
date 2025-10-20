@@ -418,7 +418,6 @@ class BranchingTree:
                 mapping = np.zeros(max_leaf+1, dtype=np.int32)
                 for i, leaf in enumerate(leaf_nodes):
                     mapping[leaf] = i
-                # mapping = {leaf_nodes[i]: i for i in range(self.k)}
                 return_dict= {
                     'weighted_distributions': {i: v for i, v in enumerate(weighted_distributions)},
                     'impurities': {i: v for i, v in enumerate(leaf_impurity)},
@@ -449,7 +448,6 @@ class BranchingTree:
             if curr_solution is None:
                 continue
             # check for conditions
-
             mapping_ = curr_solution['mapping']
             if self.pairwise_candidates > 0:
                 branching = mapping_[apply_]
@@ -474,7 +472,7 @@ class BranchingTree:
                     kmeans.fit(leaf_distributions, sample_weight=leaf_samples)
                     assignments = kmeans.labels_
                 except Warning:
-                    # this means that the # of distinct points is less than k_
+                    # this means that the # of distinct points is less than k_, we can fallback to random init
                     assignments = np.random.randint(0, k_, size=len(leaf_nodes))
         else:
             assignments = np.random.randint(0, k_, size=len(leaf_nodes))

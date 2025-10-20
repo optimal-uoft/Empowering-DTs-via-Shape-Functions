@@ -114,38 +114,32 @@ class DataFactory_clf:
 
     def fetch_function(self, dataset):
         function_dict = {
-            'adult': self.fetch_adult, # use this
-            'covtype': self.fetch_covtype, # Use this
-            'mushroom': self.fetch_mushroom, # use this
-            'pendigits': self.fetch_pendigits, # use this
-            'bean': self.fetch_bean, # use this
-            'mini-boone': self.fetch_mini_boone, 
+            'adult': self.fetch_adult,
+            'avila': self.fetch_avila,
+            'bank': self.fetch_bank,
+            'bean': self.fetch_bean,
+            'bidding': self.fetch_bidding,
+            'covtype': self.fetch_covtype,
             'electricity': self.fetch_electricity,
+            'eucalyptus': self.fetch_eucalyptus,
             'eye-movements': self.fetch_eye_movements, # REALLY GOOD
+            'eye-state': self.fetch_eye_state,
+            'fault': self.fetch_fault,
             'gas-drift': self.fetch_gasdrift, 
             'higgs': self.fetch_higgs,
-            'eye-state': self.fetch_eye_state,
-            'breast-cancer': self.fetch_breast_cancer,
-            'credit': self.fetch_credit,
-            'eucalyptus': self.fetch_eucalyptus,
-            'spambase': self.fetch_spambase,
             'htru': self.fetch_htru,
-            'avila': self.fetch_avila,
             'magic': self.fetch_magic,
-            'skin': self.fetch_skin,
-            'fault': self.fetch_fault,
+            'mini-boone': self.fetch_mini_boone,
+            'mushroom': self.fetch_mushroom,
+            'occupancy': self.fetch_occupancy,
             'page': self.fetch_page,
-            'segment': self.fetch_segment,
-            'wilt': self.fetch_wilt,
-            'bidding': self.fetch_bidding,
+            'pendigits': self.fetch_pendigits,
             'raisin': self.fetch_raisin,
             'rice': self.fetch_rice,
-            'occupancy': self.fetch_occupancy,
-            'jannis': self.fetch_jannis,
-            'landsat': self.fetch_landsat,
-            'bank': self.fetch_bank,
             'room': self.fetch_room,
-            'higgs_down': self.fetch_higgs_down,
+            'segment': self.fetch_segment,
+            'skin': self.fetch_skin,
+            'wilt': self.fetch_wilt,
         }
         if dataset in function_dict:
             return function_dict[dataset]
@@ -161,47 +155,12 @@ class DataFactory_clf:
         return X, y, mapping
 
     def fetch_higgs(self):
-        X, y, mapping =  self._fetch_openml_dataset(data_id=45570)
-        # downsample the dataset to 1,000,000 points in a stratified manner
-        X_down, _, y_down, _ = train_test_split(
-            X, y, 
-            train_size=10000, 
-            stratify=y, 
-            random_state=42
-        )
-        return X_down, y_down, mapping
-    
-    def fetch_higgs_down(self):
-        X, y, mapping =  self._fetch_openml_dataset(data_id=45570)
-        # downsample the dataset to 1,000,000 points in a stratified manner
-        X_down, _, y_down, _ = train_test_split(
-            X, y, 
-            train_size=10000, 
-            stratify=y, 
-            random_state=42
-        )
-        return X_down, y_down, mapping
-    def fetch_credit(self):
-        return self._fetch_openml_dataset(data_id=31)
-    
-    def fetch_spambase(self):
-        return self._fetch_openml_dataset(data_id=44)
+        return self._fetch_openml_dataset(data_id=45570)
+
     
     def fetch_bank(self):
         return self._fetch_openml_dataset(data_id=1462)
-    
-    def fetch_cmc(self):
-        return self._fetch_openml_dataset(data_id=23)
-    
-    def fetch_landsat(self):
-        return self._fetch_openml_dataset(data_id=182)
 
-    def fetch_breast_cancer(self):
-        return self._fetch_openml_dataset(data_id=1510)
-    
-    def fetch_phoneme(self):
-        return self._fetch_openml_dataset(data_id=1489)
-    
     def fetch_eucalyptus(self):
         return self._fetch_openml_dataset(data_id=43924)
 
@@ -222,9 +181,6 @@ class DataFactory_clf:
 
     def fetch_pendigits(self):
         return self._fetch_openml_dataset(data_id=32)
-
-    def fetch_jannis(self):
-        return self._fetch_openml_dataset(data_id=41168)
 
     def fetch_htru(self):
         return self._fetch_openml_dataset(data_id=45558)
@@ -460,15 +416,6 @@ class DataFactory_rgr:
             'black-friday': self.fetch_black_friday,
             'diamonds': self.fetch_diamonds,
             'ailerons': self.fetch_ailerons,
-            'house16H': self.fetch_house_16H,
-            'bikeshare': self.fetch_bikeshare,
-            'sulfur': self.fetch_sulfur,
-            'kin8nm': self.fetch_kin8nm,
-            'space-ga': self.fetch_space_ga,
-            'quake': self.fetch_quake,
-            'cpu-act': self.fetch_cpu_act,
-            'munich': self.fetch_munich,
-            'delta-elevators': self.fetch_delta_elevators,
         }
         if dataset in function_dict:
             return function_dict[dataset]
@@ -477,33 +424,9 @@ class DataFactory_rgr:
 
     def fetch_ailerons(self):
         return self._fetch_openml_dataset(data_id=44137)
-    def fetch_house_16H(self):
-        return self._fetch_openml_dataset(data_id=44139)
-    def fetch_bikeshare(self):
-        return self._fetch_openml_dataset(data_id=44063)
+    def fetch_california(self):
+        return self._fetch_openml_dataset(data_id=44025)
     def fetch_black_friday(self):
         return self._fetch_openml_dataset(data_id=41540)
     def fetch_diamonds(self):
         return self._fetch_openml_dataset(data_id=42225)
-    def fetch_california(self):
-        return self._fetch_openml_dataset(data_id=44025)
-    def fetch_sulfur(self):
-        return self._fetch_openml_dataset(data_id=23515)
-    def fetch_kin8nm(self):
-        return self._fetch_openml_dataset(data_id=189)
-    def fetch_wine_quality(self):
-        return self._fetch_openml_dataset(data_id=287)
-    def fetch_space_ga(self):
-        return self._fetch_openml_dataset(data_id=507)
-    def fetch_brazil_house_prices(self):
-        return self._fetch_openml_dataset(data_id=42688)
-    def fetch_moneyball(self):
-        return self._fetch_openml_dataset(data_id=41021)
-    def fetch_quake(self):
-        return self._fetch_openml_dataset(data_id=209)
-    def fetch_cpu_act(self):
-        return self._fetch_openml_dataset(data_id=197)
-    def fetch_munich(self):
-        return self._fetch_openml_dataset(data_id=46772)
-    def fetch_delta_elevators(self):
-        return self._fetch_openml_dataset(data_id=198)
