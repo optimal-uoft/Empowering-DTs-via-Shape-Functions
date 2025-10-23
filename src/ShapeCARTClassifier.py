@@ -6,7 +6,7 @@ from sklearn.utils.multiclass import unique_labels
 from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier
 from src.BranchingTree import BranchingTree
-from src.BiTAO import BiCARTClassifier
+from src.BiCART import BiCARTClassifier
 from sklearn.metrics import accuracy_score
 import gc
 import random

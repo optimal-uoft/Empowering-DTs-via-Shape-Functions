@@ -4,7 +4,7 @@ import itertools
 import queue
 import warnings
 from sklearn.cluster import KMeans
-from src.BiTAO import BiCARTClassifier
+from src.BiCART import BiCARTClassifier
 from argparse import Namespace
 from src.dpdt_clf import DPDTreeClassifierApply
 from sklearn.preprocessing import LabelEncoder

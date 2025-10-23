@@ -3,17 +3,13 @@ import numpy as np
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from src.BranchingTreeRegressor import BranchingTreeRegressor
-from src.BiTAO import BiCARTClassifier, BiTAOClassifier
-from sklearn.metrics import accuracy_score
-import contextlib
-import io
+from BiCART import BiCARTClassifier
 from line_profiler import profile
 import gc
 import random
-import time
 from sklearn.dummy import DummyClassifier
-from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error
+
 class ShapeCARTRegressor:
     def __init__(self,
                  # Outer Tree Params

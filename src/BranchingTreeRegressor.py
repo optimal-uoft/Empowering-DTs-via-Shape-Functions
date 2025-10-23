@@ -4,7 +4,7 @@ import itertools
 import queue
 import warnings
 from sklearn.cluster import KMeans
-from src.BiTAO import BiCARTClassifier, BiCARTRegressor
+from BiCART import BiCARTRegressor
 from line_profiler import profile
 from argparse import Namespace
 class KMeansBranch:
@@ -366,7 +366,6 @@ class BranchingTreeRegressor:
                 max_leaf_nodes = self.max_leaf_nodes,
                 random_state = self.random_state,
             )
-        # 
 
         tree.fit(X,y)
         self.initial_impurity = tree.tree_.impurity[0]

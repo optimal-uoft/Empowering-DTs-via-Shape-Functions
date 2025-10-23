@@ -18,7 +18,6 @@ dependencies:
   - seaborn
   - h5py
   - interpret
-  - py-xgboost
   - networkx
   - pip:
       - nbdev
@@ -29,7 +28,4 @@ dependencies:
       - ucimlrepo
       - imodels
       - line-profiler
-      - pydot
-      - dot2tex
-      - gosdt
       - git+https://github.com/KohlerHECTOR/DPDTreeEstimator
