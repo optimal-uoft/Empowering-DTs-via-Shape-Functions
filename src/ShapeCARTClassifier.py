@@ -7,10 +7,10 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier
 from src.BranchingTree import BranchingTree
 from src.BiCART import BiCARTClassifier
-from sklearn.metrics import accuracy_score
 import gc
 import random
 from sklearn.dummy import DummyClassifier
+
 class ShapeCARTClassifier:
     def __init__(self,
                  # Outer Tree Params

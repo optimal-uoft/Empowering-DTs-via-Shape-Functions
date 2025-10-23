@@ -4,7 +4,6 @@ import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from src.BranchingTreeRegressor import BranchingTreeRegressor
 from BiCART import BiCARTClassifier
-from line_profiler import profile
 import gc
 import random
 from sklearn.dummy import DummyClassifier
