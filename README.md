@@ -1,6 +1,6 @@
 # Empowering Decision Trees via Shape Functions (NeurIPS 2025)
 
-This the working repository for the paper "Empowering Decision Trees via Shape Functions" (NeurIPS 2025). 
+This the working repository for the paper "[Empowering Decision Trees via Shape Functions](https://arxiv.org/abs/2510.19040)" (NeurIPS 2025). 
 ![sgt visualization](SGT_Viz.png)
 
 ## What's New?
